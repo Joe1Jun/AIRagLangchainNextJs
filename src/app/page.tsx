@@ -1,12 +1,16 @@
 'use client';
 
+import Navbar from './components/navbar';
 import { useChat } from 'ai/react';
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
   return (
     
-
+    <div>
+     <Navbar/>
+   
+    
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
       {messages.map(m => (
         <div key={m.id} className="whitespace-pre-wrap">
@@ -23,6 +27,7 @@ export default function Chat() {
           onChange={handleInputChange}
         />
       </form>
+    </div>
     </div>
   );
 }
